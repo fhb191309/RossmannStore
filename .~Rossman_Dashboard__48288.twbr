@@ -1,0 +1,1912 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0511.1508                               -->
+<workbook original-version='18.1' source-build='2023.1.2 (20231.23.0511.1508)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='Extrakt group_rossmann_dataprep' inline='true' name='federated.1g43ktj1l9tot61d5999l17irz1e' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='group_rossmann_dataprep' name='hyper.1wrrlak1hl4cvm141njb016evre4'>
+            <connection authentication='auth-none' author-locale='de_DE' class='hyper' dbname='/Users/ugouwakwe/Documents/GitHub/RossmannStore/group_rossmann_dataprep.hyper' default-settings='yes' server='' sslmode='' username='tableau_internal_user' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='hyper.1wrrlak1hl4cvm141njb016evre4' name='Extract' table='[Extract].[Extract]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='hyper.1wrrlak1hl4cvm141njb016evre4' name='Extract' table='[Extract].[Extract]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Store</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Store]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Store</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1792</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StoreType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[StoreType]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>StoreType</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Assortment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Assortment]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Assortment</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CompetitionDistance</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CompetitionDistance]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>CompetitionDistance</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>925</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CompetitionOpenSinceMonth</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CompetitionOpenSinceMonth]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>CompetitionOpenSinceMonth</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>13</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CompetitionOpenSinceYear</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CompetitionOpenSinceYear]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>CompetitionOpenSinceYear</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>33</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Promo2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Promo2]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Promo2</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Promo2SinceWeek</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Promo2SinceWeek]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Promo2SinceWeek</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>25</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Promo2SinceYear</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Promo2SinceYear]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Promo2SinceYear</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>8</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PromoInterval</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PromoInterval]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>PromoInterval</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>4</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>11</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StateName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[StateName]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>StateName</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>11</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DayOfWeek</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DayOfWeek]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>DayOfWeek</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>7</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <approx-count>1315</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>57297</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Customers]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Customers</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>5966</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Open</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Open]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Open</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Promo</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Promo]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Promo</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StateHoliday</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[StateHoliday]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>StateHoliday</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SchoolHoliday</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SchoolHoliday]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>SchoolHoliday</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Competition Distance' datatype='integer' name='[CompetitionDistance]' role='measure' type='quantitative' />
+      <column caption='Competition Open Since Month' datatype='integer' name='[CompetitionOpenSinceMonth]' role='dimension' type='quantitative' />
+      <column caption='Competition Open Since Year' datatype='integer' name='[CompetitionOpenSinceYear]' role='dimension' type='quantitative' />
+      <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+      <column caption='Day Of Week' datatype='integer' name='[DayOfWeek]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Promo2SinceWeek]' role='dimension' type='quantitative' />
+      <column datatype='integer' name='[Promo2SinceYear]' role='dimension' type='quantitative' />
+      <column caption='Promo Interval' datatype='string' name='[PromoInterval]' role='dimension' type='nominal' />
+      <column caption='School Holiday' datatype='integer' name='[SchoolHoliday]' role='measure' type='quantitative' />
+      <column caption='State Holiday' datatype='integer' name='[StateHoliday]' role='measure' type='quantitative' />
+      <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='CountD' caption='Stores' datatype='string' datatype-customized='true' default-role='measure' default-type='quantitative' name='[Store (Kopie)_2036119642386186240]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Store]' />
+      </column>
+      <column caption='Store Type' datatype='string' name='[StoreType]' role='dimension' type='nominal' />
+      <column aggregation='CountD' datatype='string' datatype-customized='true' name='[Store]' role='dimension' type='nominal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Extract' datatype='table' name='[__tableau_internal_object_id__].[Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85]' role='measure' type='quantitative' />
+      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+      <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Store]' derivation='None' name='[none:Store:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Date]' derivation='Quarter-Trunc' name='[tqr:Date:ok]' pivot='key' type='ordinal' />
+      <group caption='Aktion (State Name,State)' hidden='true' name='[Action (State Name,State)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[StateName]' />
+          <groupfilter function='level-members' level='[State]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Ausschlüsse (QUARTAL(Date),Store)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tqr:Date:ok]' />
+          <groupfilter function='level-members' level='[none:Store:nk]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Einschlüsse (State,State Name)]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:State:nk]' />
+          <groupfilter function='level-members' level='[none:StateName:nk]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:State:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;SN&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;BE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;HH&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;ST&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NW&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;BW&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;RP&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;TH&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;SH&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BY&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;HE&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:StateName:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;SachsenAnhalt&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;BadenWuerttemberg&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Hessen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;SchleswigHolstein&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NordrheinWestfalen&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Bayern&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;RheinlandPfalz&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Thueringen&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Sachsen&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Berlin&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Hamburg&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Deutschland&quot;' />
+        <semantic-value key='[State].[Name]' value='%null%' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Extract' id='Extract (Extract.Extract)_EAA1F450B5D74E539F53510498AF5B85'>
+            <properties context=''>
+              <relation connection='hyper.1wrrlak1hl4cvm141njb016evre4' name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <shared-views>
+    <shared-view name='federated.1g43ktj1l9tot61d5999l17irz1e'>
+      <datasources>
+        <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+        <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <filter class='quantitative' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]' included-values='in-range-or-null'>
+        <min>#2013-01-01#</min>
+        <max>#2015-07-31#</max>
+        <target field='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generiert)' name='[Action1_0F1A45440FF24AAE81EA143DAEB18299]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Map' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Anzahl-Kunden'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='integer' name='[Customers]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Customers]' derivation='Sum' name='[sum:Customers:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:StateName:nk]' />
+              <groupfilter function='member' level='[none:StateName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Customers:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{B8DBC91C-D7AE-4D58-BFC2-73DCBE7DD849}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Umsatz pro Bundesland</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column aggregation='CountD' caption='Stores' datatype='string' datatype-customized='true' default-role='measure' default-type='quantitative' name='[Store (Kopie)_2036119642386186240]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Store]' />
+            </column>
+            <column aggregation='CountD' datatype='string' datatype-customized='true' name='[Store]' role='dimension' type='nominal' />
+            <column-instance column='[Store (Kopie)_2036119642386186240]' derivation='CountD' name='[ctd:Store (Kopie)_2036119642386186240:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:StateName:nk]' />
+              <groupfilter function='member' level='[none:StateName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]' field-type='quantitative' max='1927927.0395917008' min='-369934.30848266481' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]' field-type='quantitative' max='7511461.9911918007' min='5519310.3333901744' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' />
+              <lod column='[federated.1g43ktj1l9tot61d5999l17irz1e].[ctd:Store (Kopie)_2036119642386186240:qk]' />
+              <lod column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]' />
+              <lod column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' />
+              <geometry column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]</rows>
+        <cols>[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{28FE8E46-8FF8-464B-B78C-62AA97E9633A}' />
+    </worksheet>
+    <worksheet name='Piechart-Storetype'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column caption='Store Type' datatype='string' name='[StoreType]' role='dimension' type='nominal' />
+            <column-instance column='[StoreType]' derivation='Count' name='[cnt:StoreType:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[StoreType]' derivation='None' name='[none:StoreType:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:StateName:nk]' />
+              <groupfilter function='member' level='[none:StateName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <text column='[federated.1g43ktj1l9tot61d5999l17irz1e].[cnt:StoreType:qk]' />
+              <text column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StoreType:nk]' />
+              <lod column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' />
+              <color column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StoreType:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{7F1A57CD-5CCC-4BD7-8BEC-1B3778B86BF3}' />
+    </worksheet>
+    <worksheet name='Tabelle'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Umsatz pro Quartal und Jahr</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column aggregation='CountD' datatype='string' datatype-customized='true' name='[Store]' role='dimension' type='nominal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Store]' derivation='None' name='[none:Store:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Quarter-Trunc' name='[tqr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[StateName]' member='&quot;SachsenAnhalt&quot;' />
+              <groupfilter function='member' level='[State]' member='&quot;ST&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='level-members' level='[none:StateName:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' />
+              <text column='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]</rows>
+        <cols>[federated.1g43ktj1l9tot61d5999l17irz1e].[tqr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{31C9AD94-BEEC-4409-8790-86B09FEDB5D3}' />
+    </worksheet>
+    <worksheet name='Umsatz-Kunde'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Umsatz pro Wochentag</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Day Of Week' datatype='integer' name='[DayOfWeek]' role='dimension' type='quantitative' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DayOfWeek]' derivation='None' name='[none:DayOfWeek:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:StateName:nk]' />
+              <groupfilter function='member' level='[none:StateName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]' field-type='quantitative' max='7' min='1' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' data-class='subtotal' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]' value='' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='text-align' value='left' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</rows>
+        <cols>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</cols>
+      </table>
+      <simple-id uuid='{2788B518-3E11-489B-8742-9B771B83D975}' />
+    </worksheet>
+    <worksheet name='Verkaufszahlen-Kunde'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Durschnittliches Kundenaufkommen pro Wochentag und Bundesland</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='integer' name='[Customers]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Day Of Week' datatype='integer' name='[DayOfWeek]' role='dimension' type='quantitative' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column-instance column='[Customers]' derivation='Avg' name='[avg:Customers:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DayOfWeek]' derivation='None' name='[none:DayOfWeek:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:StateName:nk]' />
+              <groupfilter function='member' level='[none:StateName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]' field-type='quantitative' max='7' min='1' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]</rows>
+        <cols>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</cols>
+      </table>
+      <simple-id uuid='{A0C331A6-10EA-42B5-8793-6F763A31A17F}' />
+    </worksheet>
+    <worksheet name='Zeitreihe-Bundesland'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Umsatz pro Bundesland und Monat</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column aggregation='CountD' caption='State Name' datatype='string' name='[StateName]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[StateName]' derivation='None' name='[none:StateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[StateName]' member='&quot;SachsenAnhalt&quot;' />
+              <groupfilter function='member' level='[State]' member='&quot;ST&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]'>
+            <groupfilter function='level-members' level='[none:StateName:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</column>
+            <column>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='legend-title'>
+            <format attr='text-align' value='left' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</rows>
+        <cols>[federated.1g43ktj1l9tot61d5999l17irz1e].[tmn:Date:qk]</cols>
+      </table>
+      <simple-id uuid='{A1D11573-2C0E-42CF-9304-EC1208F5EB45}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='Extrakt group_rossmann_dataprep' name='federated.1g43ktj1l9tot61d5999l17irz1e' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1g43ktj1l9tot61d5999l17irz1e'>
+        <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+        <column-instance column='[Date]' derivation='None' name='[none:Date:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='93359' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='5599'>
+            <zone h='93359' id='5' type-v2='layout-basic' w='50731' x='586' y='5599'>
+              <zone h='84046' id='3' name='Map' w='50731' x='586' y='14912'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='9313' id='17' name='Map' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]' show-null-ctrls='false' type-v2='filter' values='database' w='50731' x='586' y='5599'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='657' h='93359' id='14' is-fixed='true' type-v2='layout-basic' w='48097' x='51317' y='5599'>
+              <zone h='53506' id='6' param='horz' type-v2='layout-flow' w='48097' x='51317' y='5599'>
+                <zone fixed-size='440' h='53506' id='9' is-fixed='true' name='Tabelle' w='48097' x='51317' y='5599'>
+                  <layout-cache fixed-size-h='1221' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='39853' id='15' param='horz' type-v2='layout-flow' w='48097' x='51317' y='59105'>
+                <zone h='39853' id='10' name='Zeitreihe-Bundesland' w='40996' x='51317' y='59105'>
+                  <layout-cache minheight='198' minwidth='163' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='89' h='39853' id='11' is-fixed='true' name='Zeitreihe-Bundesland' pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]' type-v2='color' w='7101' x='92313' y='59105'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='4557' id='51' type-v2='dashboard-object' w='29429' x='69985' y='1042'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{40FC0405-14BC-4757-A5D5-C84178ACECA3}&quot;' button-type='text'>
+              <button-visual-state>
+                <caption>Zum Dashboard 2</caption>
+                <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                <format attr='background-color' value='#333333' />
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='4557' id='52' type-v2='text' w='69399' x='586' y='1042'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontsize='11'>Dashboard 1</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='110' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='109' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone forceUpdate='true' h='4557' id='52' type-v2='text' w='69399' x='586' y='1042'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='11'>Dashboard 1</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4557' id='51' type-v2='dashboard-object' w='29429' x='69985' y='1042'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{40FC0405-14BC-4757-A5D5-C84178ACECA3}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Zum Dashboard 2</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='53506' id='9' is-fixed='true' name='Tabelle' w='48097' x='51317' y='5599'>
+                  <layout-cache fixed-size-h='1221' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9313' id='17' name='Map' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Date:qk]' show-null-ctrls='false' type-v2='filter' values='database' w='50731' x='586' y='5599'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='84046' id='3' is-fixed='true' name='Map' w='50731' x='586' y='14912'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39853' id='10' is-fixed='true' name='Zeitreihe-Bundesland' w='40996' x='51317' y='59105'>
+                  <layout-cache minheight='198' minwidth='163' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='89' h='39853' id='11' name='Zeitreihe-Bundesland' pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]' type-v2='color' w='7101' x='92313' y='59105'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A5FF9FFB-68E1-4414-A2FF-5D008EAFF2CE}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='93295' id='9' param='horz' type-v2='layout-flow' w='98828' x='586' y='5663'>
+            <zone h='93295' id='7' type-v2='layout-basic' w='81112' x='586' y='5663'>
+              <zone h='46647' id='5' name='Umsatz-Kunde' w='81112' x='586' y='52311'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='46648' id='16' name='Verkaufszahlen-Kunde' w='81112' x='586' y='5663'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='242' h='93295' id='8' is-fixed='true' param='vert' type-v2='layout-flow' w='17716' x='81698' y='5663'>
+              <zone fixed-size='250' h='32650' id='17' is-fixed='true' name='Verkaufszahlen-Kunde' pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' type-v2='color' w='17716' x='81698' y='5663'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='303' h='32650' id='25' is-fixed='true' name='Anzahl-Kunden' w='17716' x='81698' y='38313'>
+                <layout-cache fixed-size-w='239' type-h='fixed' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='207' h='27995' id='26' is-fixed='true' name='Piechart-Storetype' w='17716' x='81698' y='70963'>
+                <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='4621' id='50' type-v2='dashboard-object' w='29502' x='69912' y='1042'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{8B287BE9-CEC3-44C5-A178-002BE2CFCBCD}&quot;' button-type='text'>
+              <button-visual-state>
+                <caption>Zum Dashboard 1</caption>
+                <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                <format attr='background-color' value='#333333' />
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='4621' id='51' type-v2='text' w='69326' x='586' y='1042'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontsize='11'>Dashboard 2</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='109' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='108' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone forceUpdate='true' h='4621' id='51' type-v2='text' w='69326' x='586' y='1042'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='11'>Dashboard 2</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4621' id='50' type-v2='dashboard-object' w='29502' x='69912' y='1042'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{8B287BE9-CEC3-44C5-A178-002BE2CFCBCD}&quot;' button-type='text'>
+                    <button-visual-state>
+                      <caption>Zum Dashboard 1</caption>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46648' id='16' is-fixed='true' name='Verkaufszahlen-Kunde' w='81112' x='586' y='5663'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='250' h='32650' id='17' name='Verkaufszahlen-Kunde' pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' type-v2='color' w='17716' x='81698' y='5663'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='243' h='32650' id='25' is-fixed='true' name='Anzahl-Kunden' w='17716' x='81698' y='38313'>
+                  <layout-cache fixed-size-w='239' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46647' id='5' is-fixed='true' name='Umsatz-Kunde' w='81112' x='586' y='52311'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='207' h='27995' id='26' is-fixed='true' name='Piechart-Storetype' w='17716' x='81698' y='70963'>
+                  <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{EC33050E-0576-4E92-89C2-47D92026442B}' />
+    </dashboard>
+    <dashboard name='Rossmann Store Sales' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Rossmann Store Sales</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='story-point-caption'>
+          <format attr='width' value='254' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98058' id='1' param='vert' removable='false' type-v2='layout-flow' w='98770' x='615' y='971'>
+            <zone h='4005' id='3' type-v2='title' w='98770' x='615' y='971' />
+            <zone fixed-size='103' h='12500' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98770' x='615' y='4976' />
+            <zone h='81553' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98770' x='615' y='17476'>
+              <flipboard active-id='6' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Frage 1: Wie verliefen die Umsatzzahlen pro Bundesland im Laufe der Zeit?' captured-sheet='Dashboard 1' id='1'>
+                    <capturedDeltas>
+                      <worksheet name='Map'>
+                        <style delta-type='added'>
+                          <style-rule element='axis'>
+                            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]' field-type='quantitative' max='7360421.8209410468' min='5772695.4405704187' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+                            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]' field-type='quantitative' max='1808785.5930975911' min='-22588.572862107863' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+                          </style-rule>
+                        </style>
+                        <selection-collection />
+                      </worksheet>
+                      <worksheet name='Tabelle'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[StateName]' />
+                            <groupfilter function='level-members' level='[State]' />
+                          </groupfilter>
+                        </filter>
+                        <shelf-sort-deltas>
+                          <clear-shelf-sorts>
+                            <clear-shelf-sort-v2 dimension='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]' is-on-innermost-dimension='true' shelf='rows' />
+                          </clear-shelf-sorts>
+                        </shelf-sort-deltas>
+                      </worksheet>
+                      <worksheet name='Zeitreihe-Bundesland'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[StateName]' />
+                            <groupfilter function='level-members' level='[State]' />
+                          </groupfilter>
+                        </filter>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Frage 1: Wie verliefen die Umsatzzahlen pro Bundesland im Laufe der Zeit?' captured-sheet='Dashboard 1' id='2'>
+                    <capturedDeltas>
+                      <worksheet name='Map'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Einschlüsse (State,State Name)]'>
+                          <groupfilter function='crossjoin' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                            <groupfilter function='member' level='[none:State:nk]' member='&quot;NW&quot;' />
+                            <groupfilter function='member' level='[none:StateName:nk]' member='&quot;NordrheinWestfalen&quot;' />
+                          </groupfilter>
+                        </filter>
+                        <annotations>
+                          <annotation class='point' delta-type='added' id='0' mark-position='1' pullback='12' text-width='231'>
+                            <formatted-text>
+                              <run fontalignment='0' fontcolor='#787878'>State: </run>
+                              <run bold='true' fontalignment='0'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]>]]></run>
+                              <run fontalignment='0'>Æ&#10;</run>
+                              <run fontalignment='0' fontcolor='#787878'>State Name: </run>
+                              <run bold='true' fontalignment='0'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]>]]></run>
+                              <run fontalignment='0'>Æ&#10;</run>
+                              <run fontalignment='0' fontcolor='#787878'>Anzahl (eindeutig) von Stores: </run>
+                              <run bold='true' fontalignment='0'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[ctd:Store (Kopie)_2036119642386186240:qk]>]]></run>
+                              <run fontalignment='0'>Æ&#10;</run>
+                              <run fontalignment='0' fontcolor='#787878'>Sales: </run>
+                              <run bold='true' fontalignment='0'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]>]]></run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='mark'>
+                                <tuple-reference>
+                                  <tuple-descriptor>
+                                    <pane-descriptor>
+                                      <x-fields>
+                                        <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]</field>
+                                      </x-fields>
+                                      <y-fields>
+                                        <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]</field>
+                                      </y-fields>
+                                    </pane-descriptor>
+                                    <columns>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[ctd:Store (Kopie)_2036119642386186240:qk]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Geometry (generated)]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]</field>
+                                      <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]</field>
+                                    </columns>
+                                  </tuple-descriptor>
+                                  <tuple>
+                                    <value>286</value>
+                                    <value>&quot;NW&quot;</value>
+                                    <value>&quot;NordrheinWestfalen&quot;</value>
+                                    <value>1598936483</value>
+                                    <value>&quot;POLYGON((6.4054 50.3233,6.3995 50.3452,6.3676 50.3592,6.3427 50.3807,6.3701 50.409,6.3722 50.4558,6.3407 50.4619,6.3423 50.4837,6.3088 50.5015,6.2697 50.5044,6.2267 50.4945,6.1981 50.5361,6.1896 50.566,6.2251 50.5905,6.2406 50.5871,6.2618 50.6117,6.2609 50.6285,6.1834 50.6321,6.1834 50.6523,6.1113 50.7232,6.073 50.7209,6.0442 50.7286,6.0209 50.7544,6.0268 50.7728,6.0038 50.8014,6.0248 50.814,6.0189 50.8462,6.0741 50.8465,6.0881 50.8722,6.0754 50.8906,6.0825 50.9214,6.0181 50.9347,6.013 50.9604,6.0264 50.9833,5.9677 50.9794,5.9553 50.9884,5.8971 50.9749,5.9056 51.0021,5.8841 51.0134,5.8782 51.0371,5.9133 51.0669,5.9381 51.0351,5.9686 51.0482,5.9972 51.0838,6.0367 51.0965,6.0924 51.1347,6.1546 51.148,6.1753 51.1584,6.1227 51.1814,6.0994 51.1699,6.0731 51.1828,6.0726 51.2426,6.1241 51.2744,6.1686 51.333,6.2264 51.3603,6.2054 51.3995,6.2236 51.4747,6.2117 51.5138,6.1769 51.5386,6.1576 51.5662,6.0914 51.6059,6.1096 51.6469,6.0994 51.6581,6.0373 51.6726,6.0261 51.7086,6.0321 51.7238,5.9532 51.748,5.9905 51.7663,5.979 51.7976,5.9457 51.8149,5.9626 51.8367,6.0017 51.8323,6.055 51.8525,6.0633 51.8653,6.1022 51.8488,6.1662 51.8409,6.1255 51.898,6.1575 51.9051,6.1878 51.892,6.2147 51.8678,6.299 51.8679,6.306 51.8491,6.3456 51.8509,6.3631 51.8354,6.3899 51.8329,6.409 51.8526,6.4512 51.8651,6.4725 51.8538,6.544 51.8845,6.6373 51.9041,6.6832 51.9175,6.7212 51.8963,6.7698 51.9161,6.7941 51.9353,6.7986 51.9589,6.8288 51.9639,6.8264 51.9933,6.7528 52.0286,6.6877 52.04,6.6947 52.0698,6.736 52.0747,6.751 52.0848,6.7605 52.1188,6.8558 52.1207,6.8819 52.1559,6.9138 52.1775,6.9513 52.1811,6.9851 52.2252,7.0177 52.225,7.0657 52.2412,7.0992 52.2429,7.1212 52.2612,7.1548 52.2664,7.2978 52.2638,7.3174 52.2802,7.3628 52.2895,7.3865 52.3094,7.4262 52.3142,7.438 52.3334,7.5339 52.3704,7.5721 52.38,7.6043 52.4208,7.5708 52.432,7.6039 52.4748,7.6845 52.4566,7.6979 52.4427,7.7138 52.4009,7.8067 52.3714,7.8418 52.3686,7.8914 52.3807,7.937 52.365,7.9488 52.3346,7.9888 52.3034,7.9319 52.3017,7.9242 52.2619,7.9261 52.2256,7.9021 52.1992,7.9393 52.1763,8.0033 52.1601,8.0075 52.1153,7.9727 52.1161,7.9589 52.1052,7.9008 52.0924,7.8893 52.0836,7.933 52.0468,7.981 52.0358,8.0339 52.0684,8.0668 52.0681,8.0969 52.057,8.1523 52.076,8.1948 52.0738,8.2196 52.1047,8.2678 52.1319,8.3117 52.1183,8.324 52.1259,8.3897 52.1081,8.415 52.1394,8.4929 52.1667,8.4907 52.1926,8.4653 52.1957,8.4423 52.2146,8.4613 52.2296,8.4662 52.2678,8.4622 52.3171,8.442 52.3615,8.3896 52.385,8.3239 52.4004,8.3215 52.4183,8.297 52.4563,8.3485 52.4524,8.361 52.4432,8.4012 52.4509,8.4296 52.4478,8.4542 52.4611,8.4589 52.4919,8.5093 52.5144,8.558 52.5003,8.652 52.5313,8.6985 52.5088,8.6988 52.4854,8.7147 52.392,8.7462 52.3877,8.7896 52.3987,8.8537 52.3895,8.8908 52.4047,8.9336 52.401,8.979 52.4271,8.9895 52.4516,9.0129 52.4571,9.0248 52.4785,9.0536 52.5004,9.0958 52.4978,9.1256 52.4758,9.0951 52.4431,9.1235 52.4227,9.1213 52.4008,9.0846 52.355,9.0262 52.3447,8.9985 52.3256,8.985 52.2958,8.9648 52.2795,8.9746 52.2624,9.0357 52.2508,9.0695 52.2266,9.0458 52.2109,9.0127 52.1613,9.0179 52.1324,9.0471 52.1444,9.1068 52.1322,9.1452 52.1347,9.1541 52.0925,9.193 52.0705,9.1723 52.0472,9.1921 52.0105,9.1795 52.0025,9.1859 51.9659,9.2065 51.9628,9.2407 51.9768,9.2737 51.9741,9.2717 51.9325,9.2945 51.9196,9.3328 51.9163,9.3462 51.8957,9.3356 51.8558,9.3661 51.8648,9.4331 51.8413,9.428 51.8147,9.438 51.7888,9.3784 51.7381,9.4007 51.6988,9.3865 51.6459,9.4411 51.6502,9.4214 51.6295,9.3752 51.6264,9.3458 51.5702,9.311 51.5368,9.3082 51.5124,9.2823 51.5142,9.2643 51.4977,9.2166 51.482,9.2166 51.4598,9.186 51.4665,9.1619 51.4445,9.1028 51.443,9.0776 51.4641,9.0922 51.4873,9.0773 51.5032,9.0396 51.5019,9.0194 51.5189,8.9009 51.4889,8.8937 51.4716,8.9441 51.4299,8.9366 51.3884,8.89 51.3927,8.8546 51.3772,8.8039 51.3906,8.7322 51.372,8.7006 51.3773,8.6832 51.3626,8.6092 51.3262,8.5928 51.3038,8.5564 51.2773,8.5978 51.2467,8.6281 51.2607,8.7213 51.2749,8.7499 51.1986,8.7362 51.1605,8.6925 51.1328,8.6903 51.1092,8.6488 51.0949,8.5486 51.1028,8.508 51.0861,8.5268 51.0625,8.5187 51.0439,8.531 51.0183,8.458 50.9653,8.4333 50.9183,8.3967 50.8942,8.3692 50.8647,8.3054 50.8644,8.2706 50.8825,8.2095 50.8371,8.1882 50.8288,8.1658 50.8034,8.1277 50.7859,8.1656 50.7319,8.1426 50.6955,8.1255 50.6859,8.0989 50.7036,8.0392 50.697,8.0392 50.7277,7.9681 50.7747,7.9761 50.8203,7.967 50.8439,7.9059 50.848,7.8709 50.8781,7.8289 50.8821,7.8502 50.9249,7.7942 50.9422,7.7502 50.919,7.7585 50.8799,7.7 50.8255,7.6739 50.819,7.6779 50.789,7.6629 50.7733,7.5983 50.7667,7.5808 50.7383,7.5516 50.7466,7.4792 50.7184,7.42 50.71,7.3747 50.7182,7.3633 50.7015,7.369 50.6713,7.359 50.6502,7.2563 50.6241,7.2163 50.6267,7.1191 50.6122,7.0897 50.5858,7.0561 50.6063,6.9977 50.5648,6.9723 50.556,6.9447 50.5637,6.9315 50.5351,6.8981 50.5178,6.902 50.4689,6.8559 50.454,6.812 50.4719,6.8008 50.4914,6.7684 50.4848,6.7644 50.4508,6.7454 50.4358,6.7847 50.4209,6.7704 50.3971,6.7777 50.3644,6.7056 50.3422,6.6682 50.3718,6.638 50.3453,6.6273 50.3718,6.6041 50.3879,6.5588 50.369,6.5072 50.3597,6.4839 50.3383,6.4603 50.3616,6.4301 50.3632,6.4127 50.3894,6.392 50.3795,6.4149 50.3327,6.4054 50.3233))&quot;</value>
+                                    <value>51.609999999999999</value>
+                                    <value>7.6500000000000004</value>
+                                  </tuple>
+                                </tuple-reference>
+                              </visual-coordinate>
+                            </point>
+                            <body x='-159' y='-99' />
+                          </annotation>
+                        </annotations>
+                        <style delta-type='added'>
+                          <style-rule element='axis'>
+                            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]' field-type='quantitative' max='7360421.8209410468' min='5772695.4405704187' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+                            <encoding attr='space' class='0' field='[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]' field-type='quantitative' max='1808785.5930975911' min='-22588.572862107863' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+                          </style-rule>
+                        </style>
+                        <selection-collection>
+                          <tuple-selection>
+                            <tuple-reference>
+                              <tuple-descriptor>
+                                <pane-descriptor>
+                                  <x-fields>
+                                    <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]</field>
+                                  </x-fields>
+                                  <y-fields>
+                                    <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]</field>
+                                  </y-fields>
+                                </pane-descriptor>
+                                <columns>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[ctd:Store (Kopie)_2036119642386186240:qk]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Geometry (generated)]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Latitude (generated)]</field>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[Longitude (generated)]</field>
+                                </columns>
+                              </tuple-descriptor>
+                              <tuple>
+                                <value>286</value>
+                                <value>&quot;NW&quot;</value>
+                                <value>&quot;NordrheinWestfalen&quot;</value>
+                                <value>1598936483</value>
+                                <value>&quot;POLYGON((6.4054 50.3233,6.3995 50.3452,6.3676 50.3592,6.3427 50.3807,6.3701 50.409,6.3722 50.4558,6.3407 50.4619,6.3423 50.4837,6.3088 50.5015,6.2697 50.5044,6.2267 50.4945,6.1981 50.5361,6.1896 50.566,6.2251 50.5905,6.2406 50.5871,6.2618 50.6117,6.2609 50.6285,6.1834 50.6321,6.1834 50.6523,6.1113 50.7232,6.073 50.7209,6.0442 50.7286,6.0209 50.7544,6.0268 50.7728,6.0038 50.8014,6.0248 50.814,6.0189 50.8462,6.0741 50.8465,6.0881 50.8722,6.0754 50.8906,6.0825 50.9214,6.0181 50.9347,6.013 50.9604,6.0264 50.9833,5.9677 50.9794,5.9553 50.9884,5.8971 50.9749,5.9056 51.0021,5.8841 51.0134,5.8782 51.0371,5.9133 51.0669,5.9381 51.0351,5.9686 51.0482,5.9972 51.0838,6.0367 51.0965,6.0924 51.1347,6.1546 51.148,6.1753 51.1584,6.1227 51.1814,6.0994 51.1699,6.0731 51.1828,6.0726 51.2426,6.1241 51.2744,6.1686 51.333,6.2264 51.3603,6.2054 51.3995,6.2236 51.4747,6.2117 51.5138,6.1769 51.5386,6.1576 51.5662,6.0914 51.6059,6.1096 51.6469,6.0994 51.6581,6.0373 51.6726,6.0261 51.7086,6.0321 51.7238,5.9532 51.748,5.9905 51.7663,5.979 51.7976,5.9457 51.8149,5.9626 51.8367,6.0017 51.8323,6.055 51.8525,6.0633 51.8653,6.1022 51.8488,6.1662 51.8409,6.1255 51.898,6.1575 51.9051,6.1878 51.892,6.2147 51.8678,6.299 51.8679,6.306 51.8491,6.3456 51.8509,6.3631 51.8354,6.3899 51.8329,6.409 51.8526,6.4512 51.8651,6.4725 51.8538,6.544 51.8845,6.6373 51.9041,6.6832 51.9175,6.7212 51.8963,6.7698 51.9161,6.7941 51.9353,6.7986 51.9589,6.8288 51.9639,6.8264 51.9933,6.7528 52.0286,6.6877 52.04,6.6947 52.0698,6.736 52.0747,6.751 52.0848,6.7605 52.1188,6.8558 52.1207,6.8819 52.1559,6.9138 52.1775,6.9513 52.1811,6.9851 52.2252,7.0177 52.225,7.0657 52.2412,7.0992 52.2429,7.1212 52.2612,7.1548 52.2664,7.2978 52.2638,7.3174 52.2802,7.3628 52.2895,7.3865 52.3094,7.4262 52.3142,7.438 52.3334,7.5339 52.3704,7.5721 52.38,7.6043 52.4208,7.5708 52.432,7.6039 52.4748,7.6845 52.4566,7.6979 52.4427,7.7138 52.4009,7.8067 52.3714,7.8418 52.3686,7.8914 52.3807,7.937 52.365,7.9488 52.3346,7.9888 52.3034,7.9319 52.3017,7.9242 52.2619,7.9261 52.2256,7.9021 52.1992,7.9393 52.1763,8.0033 52.1601,8.0075 52.1153,7.9727 52.1161,7.9589 52.1052,7.9008 52.0924,7.8893 52.0836,7.933 52.0468,7.981 52.0358,8.0339 52.0684,8.0668 52.0681,8.0969 52.057,8.1523 52.076,8.1948 52.0738,8.2196 52.1047,8.2678 52.1319,8.3117 52.1183,8.324 52.1259,8.3897 52.1081,8.415 52.1394,8.4929 52.1667,8.4907 52.1926,8.4653 52.1957,8.4423 52.2146,8.4613 52.2296,8.4662 52.2678,8.4622 52.3171,8.442 52.3615,8.3896 52.385,8.3239 52.4004,8.3215 52.4183,8.297 52.4563,8.3485 52.4524,8.361 52.4432,8.4012 52.4509,8.4296 52.4478,8.4542 52.4611,8.4589 52.4919,8.5093 52.5144,8.558 52.5003,8.652 52.5313,8.6985 52.5088,8.6988 52.4854,8.7147 52.392,8.7462 52.3877,8.7896 52.3987,8.8537 52.3895,8.8908 52.4047,8.9336 52.401,8.979 52.4271,8.9895 52.4516,9.0129 52.4571,9.0248 52.4785,9.0536 52.5004,9.0958 52.4978,9.1256 52.4758,9.0951 52.4431,9.1235 52.4227,9.1213 52.4008,9.0846 52.355,9.0262 52.3447,8.9985 52.3256,8.985 52.2958,8.9648 52.2795,8.9746 52.2624,9.0357 52.2508,9.0695 52.2266,9.0458 52.2109,9.0127 52.1613,9.0179 52.1324,9.0471 52.1444,9.1068 52.1322,9.1452 52.1347,9.1541 52.0925,9.193 52.0705,9.1723 52.0472,9.1921 52.0105,9.1795 52.0025,9.1859 51.9659,9.2065 51.9628,9.2407 51.9768,9.2737 51.9741,9.2717 51.9325,9.2945 51.9196,9.3328 51.9163,9.3462 51.8957,9.3356 51.8558,9.3661 51.8648,9.4331 51.8413,9.428 51.8147,9.438 51.7888,9.3784 51.7381,9.4007 51.6988,9.3865 51.6459,9.4411 51.6502,9.4214 51.6295,9.3752 51.6264,9.3458 51.5702,9.311 51.5368,9.3082 51.5124,9.2823 51.5142,9.2643 51.4977,9.2166 51.482,9.2166 51.4598,9.186 51.4665,9.1619 51.4445,9.1028 51.443,9.0776 51.4641,9.0922 51.4873,9.0773 51.5032,9.0396 51.5019,9.0194 51.5189,8.9009 51.4889,8.8937 51.4716,8.9441 51.4299,8.9366 51.3884,8.89 51.3927,8.8546 51.3772,8.8039 51.3906,8.7322 51.372,8.7006 51.3773,8.6832 51.3626,8.6092 51.3262,8.5928 51.3038,8.5564 51.2773,8.5978 51.2467,8.6281 51.2607,8.7213 51.2749,8.7499 51.1986,8.7362 51.1605,8.6925 51.1328,8.6903 51.1092,8.6488 51.0949,8.5486 51.1028,8.508 51.0861,8.5268 51.0625,8.5187 51.0439,8.531 51.0183,8.458 50.9653,8.4333 50.9183,8.3967 50.8942,8.3692 50.8647,8.3054 50.8644,8.2706 50.8825,8.2095 50.8371,8.1882 50.8288,8.1658 50.8034,8.1277 50.7859,8.1656 50.7319,8.1426 50.6955,8.1255 50.6859,8.0989 50.7036,8.0392 50.697,8.0392 50.7277,7.9681 50.7747,7.9761 50.8203,7.967 50.8439,7.9059 50.848,7.8709 50.8781,7.8289 50.8821,7.8502 50.9249,7.7942 50.9422,7.7502 50.919,7.7585 50.8799,7.7 50.8255,7.6739 50.819,7.6779 50.789,7.6629 50.7733,7.5983 50.7667,7.5808 50.7383,7.5516 50.7466,7.4792 50.7184,7.42 50.71,7.3747 50.7182,7.3633 50.7015,7.369 50.6713,7.359 50.6502,7.2563 50.6241,7.2163 50.6267,7.1191 50.6122,7.0897 50.5858,7.0561 50.6063,6.9977 50.5648,6.9723 50.556,6.9447 50.5637,6.9315 50.5351,6.8981 50.5178,6.902 50.4689,6.8559 50.454,6.812 50.4719,6.8008 50.4914,6.7684 50.4848,6.7644 50.4508,6.7454 50.4358,6.7847 50.4209,6.7704 50.3971,6.7777 50.3644,6.7056 50.3422,6.6682 50.3718,6.638 50.3453,6.6273 50.3718,6.6041 50.3879,6.5588 50.369,6.5072 50.3597,6.4839 50.3383,6.4603 50.3616,6.4301 50.3632,6.4127 50.3894,6.392 50.3795,6.4149 50.3327,6.4054 50.3233))&quot;</value>
+                                <value>51.609999999999999</value>
+                                <value>7.6500000000000004</value>
+                              </tuple>
+                            </tuple-reference>
+                          </tuple-selection>
+                        </selection-collection>
+                      </worksheet>
+                      <worksheet name='Tabelle'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                            <groupfilter function='member' level='[StateName]' member='&quot;NordrheinWestfalen&quot;' />
+                            <groupfilter function='member' level='[State]' member='&quot;NW&quot;' />
+                          </groupfilter>
+                        </filter>
+                        <shelf-sort-deltas>
+                          <clear-shelf-sorts>
+                            <clear-shelf-sort-v2 dimension='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]' is-on-innermost-dimension='true' shelf='rows' />
+                          </clear-shelf-sorts>
+                        </shelf-sort-deltas>
+                      </worksheet>
+                      <worksheet name='Zeitreihe-Bundesland'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                            <groupfilter function='member' level='[StateName]' member='&quot;NordrheinWestfalen&quot;' />
+                            <groupfilter function='member' level='[State]' member='&quot;NW&quot;' />
+                          </groupfilter>
+                        </filter>
+                        <annotations>
+                          <annotation class='point' delta-type='added' id='0' mark-position='1' pullback='0' text-width='224'>
+                            <formatted-text>
+                              <run bold='true'>Bundesland: Nordrhein-Westfalen</run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Monat von Date: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[tmn:Date:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Sales: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='#2014-11-29 18:39:15.555#'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[tmn:Date:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='60969291.130000003'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </point>
+                            <body x='-41' y='98' />
+                          </annotation>
+                        </annotations>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Frage 2: Welcher Store hat den meisten Umsatz gemacht?' captured-sheet='Dashboard 1' id='3'>
+                    <capturedDeltas>
+                      <worksheet name='Map'>
+                        <selection-collection />
+                      </worksheet>
+                      <worksheet name='Tabelle'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[StateName]' />
+                            <groupfilter function='level-members' level='[State]' />
+                          </groupfilter>
+                        </filter>
+                        <shelf-sort-deltas>
+                          <shelf-sorts>
+                            <shelf-sort-v2 dimension-to-sort='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]' shelf='rows'>
+                              <sort-filter-info>
+                                <sort-filter level-name='[federated.1g43ktj1l9tot61d5999l17irz1e].[tqr:Date:ok]' member-value='#2014-04-01 00:00:00#' />
+                              </sort-filter-info>
+                            </shelf-sort-v2>
+                          </shelf-sorts>
+                        </shelf-sort-deltas>
+                        <selection-collection>
+                          <node-selection select-tuples='false'>
+                            <oriented-node-reference orientation='vertical'>
+                              <node-reference>
+                                <fields>
+                                  <field>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:Store:nk]</field>
+                                </fields>
+                                <multibucket>
+                                  <bucket>&quot;262&quot;</bucket>
+                                </multibucket>
+                              </node-reference>
+                              <page-reference />
+                            </oriented-node-reference>
+                          </node-selection>
+                        </selection-collection>
+                      </worksheet>
+                      <worksheet name='Zeitreihe-Bundesland'>
+                        <filter class='categorical' column='[federated.1g43ktj1l9tot61d5999l17irz1e].[Action (State Name,State)]'>
+                          <groupfilter function='crossjoin' user:ui-action-filter='[Action1_0F1A45440FF24AAE81EA143DAEB18299]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                            <groupfilter function='level-members' level='[StateName]' />
+                            <groupfilter function='level-members' level='[State]' />
+                          </groupfilter>
+                        </filter>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Frage 3: Wie unterscheidet sich der Umsatz zwischen verschiedenen Wochentagen?' captured-sheet='Dashboard 2' id='5'>
+                    <capturedDeltas>
+                      <worksheet name='Umsatz-Kunde'>
+                        <annotations>
+                          <annotation class='area' delta-type='added' id='0' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+                            <formatted-text>
+                              <run>Höchste Umsätze: Montags
+Niedrigste Umsätze: Samstags
+(Sonntags sind die Stores geschlossen)</run>
+                            </formatted-text>
+                            <top-left>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='3.0097087378640777'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='233134744.72222221'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </top-left>
+                            <bottom-right>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='4.5883495145631068'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='129783769.42460319'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[sum:Sales:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </bottom-right>
+                            <text x='0.5' y='0.5' />
+                          </annotation>
+                        </annotations>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Frage 4: Wie hoch ist die durchschnittliche Kundenanzahl pro Wochentag und Bundesland?' captured-sheet='Dashboard 2' id='6'>
+                    <capturedDeltas>
+                      <worksheet name='Verkaufszahlen-Kunde'>
+                        <annotations>
+                          <annotation class='point' delta-type='added' id='0' mark-position='1' pullback='0' text-width='160'>
+                            <formatted-text>
+                              <run fontcolor='#787878'>Day Of Week: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Avg. Customers: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]>]]></run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='1.011605415860735'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='1038.9411980172476'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </point>
+                            <body x='115' y='147' />
+                          </annotation>
+                          <annotation class='point' delta-type='added' id='1' mark-position='1' pullback='0' text-width='144'>
+                            <formatted-text>
+                              <run fontcolor='#787878'>Day Of Week: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Avg. Customers: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]>]]></run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='5.0154738878143128'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='954.00711163928918'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </point>
+                            <body x='252' y='16' />
+                          </annotation>
+                          <annotation class='point' delta-type='added' id='2' mark-position='1' pullback='0' text-width='180'>
+                            <formatted-text>
+                              <run fontcolor='#787878'>Day Of Week: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Avg. Customers: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]>]]></run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='6.0135396518375241'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='463.27683478886343'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </point>
+                            <body x='-96' y='55' />
+                          </annotation>
+                          <annotation class='point' delta-type='added' id='3' mark-position='1' pullback='0' text-width='180'>
+                            <formatted-text>
+                              <run fontcolor='#787878'>Day Of Week: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]>]]></run>
+                              <run>Æ&#10;</run>
+                              <run fontcolor='#787878'>Avg. Customers: </run>
+                              <run bold='true'><![CDATA[<[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]>]]></run>
+                            </formatted-text>
+                            <point>
+                              <visual-coordinate class='axis'>
+                                <x-coord axis-value='3.9941972920696323'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[none:DayOfWeek:qk]</axis>
+                                  </node-reference>
+                                </x-coord>
+                                <y-coord axis-value='906.82150809597908'>
+                                  <node-reference>
+                                    <axis>[federated.1g43ktj1l9tot61d5999l17irz1e].[avg:Customers:qk]</axis>
+                                  </node-reference>
+                                </y-coord>
+                                <page-reference />
+                              </visual-coordinate>
+                            </point>
+                            <body x='-34' y='126' />
+                          </annotation>
+                        </annotations>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{FD57041E-EB11-4581-987C-51D57A36F0A3}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{61D6BA7E-8E7E-4958-92EE-B446653A5BBB}' />
+    </window>
+    <window class='worksheet' name='Tabelle'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3BCC9A00-FA8B-450E-B2EC-00399DF76438}' />
+    </window>
+    <window class='worksheet' name='Zeitreihe-Bundesland'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:State:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C87B5DB8-1AE8-44FF-A73A-EE4E6FE273C0}' />
+    </window>
+    <window class='worksheet' name='Umsatz-Kunde'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{00833A85-F942-4243-A207-072D629EA8D8}' />
+    </window>
+    <window class='worksheet' name='Verkaufszahlen-Kunde'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[federated.1g43ktj1l9tot61d5999l17irz1e].[none:StateName:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4D816D75-1771-4CA4-B745-97F588CDD4F2}' />
+    </window>
+    <window class='worksheet' name='Anzahl-Kunden'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{78A4F991-AA85-4686-84D7-93A956E290BD}' />
+    </window>
+    <window class='worksheet' name='Piechart-Storetype'>
+      <cards>
+        <edge name='left'>
+          <strip size='237'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{AEB008CF-6FA6-4BED-A785-DB4366868447}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Tabelle' />
+        <viewpoint name='Zeitreihe-Bundesland'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{8B287BE9-CEC3-44C5-A178-002BE2CFCBCD}' />
+    </window>
+    <window class='dashboard' name='Dashboard 2'>
+      <viewpoints>
+        <viewpoint name='Anzahl-Kunden' />
+        <viewpoint name='Piechart-Storetype'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Umsatz-Kunde' />
+        <viewpoint name='Verkaufszahlen-Kunde'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='50' />
+      <simple-id uuid='{40FC0405-14BC-4757-A5D5-C84178ACECA3}' />
+    </window>
+    <window class='dashboard' name='Rossmann Store Sales'>
+      <viewpoints />
+      <active id='6' />
+      <simple-id uuid='{53CC02CE-DDF6-43B6-8D10-3EE9288D3E6B}' />
+    </window>
+  </windows>
+</workbook>
