@@ -1696,7 +1696,7 @@ Niedrigste Umsätze: Samstags
       <simple-id uuid='{FD57041E-EB11-4581-987C-51D57A36F0A3}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows pres-mode='true' source-height='30'>
     <window class='worksheet' name='Map'>
       <cards>
         <edge name='left'>

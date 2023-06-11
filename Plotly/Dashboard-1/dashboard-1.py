@@ -7,17 +7,22 @@ import plotly.graph_objects as go
 
 # Incorporate data
 # df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
-df = pd.read_csv('https://raw.github.com/elvoeglo/RossmannStore/blob/main/Plotly/group_rossmann_dataprep.csv', sep=';')
+df = pd.read_csv('https://raw.githubusercontent.com/elvoeglo/RossmannStore/main/Plotly/group_rossmann_dataprep.csv?token=GHSAT0AAAAAACBCGRFIBAK63264VGEEX6P2ZEFZS7A', sep=';')
 
-#Add map of Germany
-fig = go.Figure(go.Scattergeo())
-fig.update_geos(
+# Add map of Germany
+fig_geo = go.Figure(go.Scattergeo())
+fig_geo.update_geos(
     visible=False, resolution=110, scope="europe",
     showcountries=True, countrycolor="Black",
     showsubunits=True, subunitcolor="Blue"
 )
-# fig.update_layout(height=300, margin={"r":0,"t":0,"l":0,"b":0})
+fig_geo.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
 
+# Add Graphs for Sales per State and Month
+fig_sales_per_state_and_month = px.line(df, x="Date", y="Sales", color='StateName')
+fig_sales_per_state_and_month.update_xaxes(
+    dtick="M1",
+    tickformat="%b\n%Y")
 
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.CERULEAN]
@@ -59,7 +64,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
-            html.Div(dcc.Graph(figure=fig))
+            html.Div(dcc.Graph(figure=fig_geo))
         ], width=6),
 
         dbc.Col([
@@ -67,7 +72,7 @@ app.layout = dbc.Container([
             dash_table.DataTable(data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'}),
             dbc.Row([
                 html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
-                dcc.Graph(figure={}, id='my-first-graph-final'),
+                dcc.Graph(figure=fig_sales_per_state_and_month, id='my-first-graph-final'),
             ]),
         ], width=6),
     ]),
