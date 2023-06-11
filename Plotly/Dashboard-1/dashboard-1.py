@@ -21,31 +21,41 @@ app.layout = dbc.Container([
     dbc.Row([
         # Todo: Replace RadoItems with RangeSlider
         dcc.RangeSlider(
-            id='my-range-slider',
-            min=pd.Timestamp(2013, 1, 1, 0), 
-            max=pd.Timestamp(2015, 7, 31, 0), 
-            step=None,
+            id = 'my-range-slider',
+            min = 2013.0,
+            max = 2015.8,
+            step = 0.1,
             marks={
-                0: '1.1.2013',
-                31: '31.7.2015'
+                2013.0: '1.1.2013',
+                2013.3: '1.3.2013',
+                2013.6: '1.6.2013',
+                2013.9: '1.9.2013',
+                2014.0: '1.1.2014',
+                2014.3: '1.3.2014',
+                2014.6: '1.6.2014',
+                2014.9: '1.9.2014',
+                2015.0: '1.1.2015',
+                2015.3: '1.3.2015',
+                2015.6: '1.6.2015',
+                2015.8: '1.8.2015'
             }, 
-            value=[2023-1-1, 2015-7-31]
-            #updatemode='drag'
+            value = [2013.0, 2015.0],
+            updatemode='drag',
+            tooltip={'always_visible': True, 'placement': 'bottom'}
             ),
-        # dbc.RadioItems(options=[{"label": x, "value": x} for x in ['pop', 'lifeExp', 'gdpPercap']],
-        #                value='lifeExp',
-        #                inline=True,
-        #                id='radio-buttons-final')
     ]),
 
     dbc.Row([
         dbc.Col([
+            html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
             dash_table.DataTable(data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'})
         ], width=6),
 
         dbc.Col([
+            html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
             dcc.Graph(figure={}, id='my-first-graph-final'),
             dbc.Row([
+                html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
                 dcc.Graph(figure={}, id='my-first-graph-final'),
             ]),
         ], width=6),
