@@ -3,10 +3,21 @@ from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
+import plotly.graph_objects as go
 
 # Incorporate data
 # df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
-df = pd.read_csv('https://raw.githubusercontent.com/elvoeglo/RossmannStore/main/Plotly/group_rossmann_dataprep.csv?token=GHSAT0AAAAAACBCGRFJZAQOZB5KBJPQT3FSZEFXIHA', sep=';')
+df = pd.read_csv('https://raw.github.com/elvoeglo/RossmannStore/blob/main/Plotly/group_rossmann_dataprep.csv', sep=';')
+
+#Add map of Germany
+fig = go.Figure(go.Scattergeo())
+fig.update_geos(
+    visible=False, resolution=110, scope="europe",
+    showcountries=True, countrycolor="Black",
+    showsubunits=True, subunitcolor="Blue"
+)
+# fig.update_layout(height=300, margin={"r":0,"t":0,"l":0,"b":0})
+
 
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.CERULEAN]
@@ -48,12 +59,12 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
-            dash_table.DataTable(data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'})
+            html.Div(dcc.Graph(figure=fig))
         ], width=6),
 
         dbc.Col([
             html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
-            dcc.Graph(figure={}, id='my-first-graph-final'),
+            dash_table.DataTable(data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'}),
             dbc.Row([
                 html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
                 dcc.Graph(figure={}, id='my-first-graph-final'),
