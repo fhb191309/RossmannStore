@@ -1,22 +1,48 @@
 # Import packages
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
+from urllib.request import urlopen
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
+import json
+
+# Load GeoJSON file from Github
+# Author: Francesco Schwarz
+# source: https://github.com/isellsoap/deutschlandGeoJSON
+with urlopen('https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/2_bundeslaender/2_hoch.geo.json') as response:
+    bundeslaender = json.load(response)
 
 # Incorporate data
-# df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
-df = pd.read_csv('https://raw.githubusercontent.com/elvoeglo/RossmannStore/main/Plotly/group_rossmann_dataprep.csv?token=GHSAT0AAAAAACBCGRFIBAK63264VGEEX6P2ZEFZS7A', sep=';')
+# Token needs to be refreshed after 30min of use, because the file is inside a pivate repository
+df = pd.read_csv('https://raw.githubusercontent.com/elvoeglo/RossmannStore/main/Plotly/group_rossmann_dataprep.csv?token=GHSAT0AAAAAACBCGRFICQCGBNVCNG7WFRXKZEHQAOA', sep=';')
+
+# Convert Column "Date" from object to datetime
+# Sort Dataframe by Date
+# Group by Bundesland
+df['Date'] = pd.to_datetime(df['Date'])
+df.sort_values(by='Date', ascending = False, inplace = True)
+df.groupby('StateName')
+
+# Limit Page Size for Datatables to limit data being loaded
+PAGE_SIZE = 5
 
 # Add map of Germany
-fig_geo = go.Figure(go.Scattergeo())
-fig_geo.update_geos(
-    visible=False, resolution=110, scope="europe",
-    showcountries=True, countrycolor="Black",
-    showsubunits=True, subunitcolor="Blue"
-)
-fig_geo.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
+fig_map = px.choropleth(df, geojson=bundeslaender, locations='StateName', color='Sales',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           scope="europe",
+                           labels={'sales':'sales rate'}
+                          )
+fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+# fig_geo = go.Figure(go.Scattergeo())
+# fig_geo.update_geos(
+#     visible=False, resolution=110, scope="europe",
+#     showcountries=True, countrycolor="Black",
+#     showsubunits=True, subunitcolor="Blue"
+# )
+# fig_geo.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
 
 # Add Graphs for Sales per State and Month
 fig_sales_per_state_and_month = px.line(df, x="Date", y="Sales", color='StateName')
@@ -63,14 +89,29 @@ app.layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
+            # Todo: Fix Map
             html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
-            html.Div(dcc.Graph(figure=fig_geo))
+            html.Div(dcc.Graph(figure=fig_map))
         ], width=6),
 
         dbc.Col([
+            # Todo: Fix Datatable
             html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
-            dash_table.DataTable(data=df.to_dict('records'), page_size=12, style_table={'overflowX': 'auto'}),
+            dash_table.DataTable(
+                id='table-multicol-sorting',
+                columns=[
+                    {"name": i, "id": i} for i in sorted(df.columns)
+                ],
+                page_current=0,
+                page_size=PAGE_SIZE,
+                page_action='custom',
+
+                sort_action='custom',
+                sort_mode='multi',
+                sort_by=[]
+            ),
             dbc.Row([
+                # Todo: Fix Graph
                 html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
                 dcc.Graph(figure=fig_sales_per_state_and_month, id='my-first-graph-final'),
             ]),
@@ -82,7 +123,10 @@ app.layout = dbc.Container([
 # Add controls to build the interaction
 @callback(
     Output(component_id='my-first-graph-final', component_property='figure'),
-    Input(component_id='my-range-slider', component_property='value')
+    Input(component_id='my-range-slider', component_property='value'),
+    Input('table-multicol-sorting', "page_current"),
+    Input('table-multicol-sorting', "page_size"),
+    Input('table-multicol-sorting', "sort_by")
 )
 def update_graph(col_chosen):
     fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
