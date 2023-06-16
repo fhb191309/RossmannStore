@@ -1,6 +1,6 @@
 # Import packages
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
-from urllib.request import urlopen
+# from urllib.request import urlopen
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
@@ -15,15 +15,27 @@ with open('2_hoch.geo.json') as b:
     bundeslaender = geojson.load(b)
 # bundeslaender = json.load('2_hoch.geo.json')
 
-# Incorporate data
+##### Incorporate data
 # Convert 'Date' from object to Date
 df = pd.read_csv('group_rossmann_dataprep.csv', sep=';')
 df["Date"]=pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
-# Group By Date and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+##### Prep Data for line Chart
+# Group By "Date" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
 df_sales=df.groupby(["StateName", "Date"], as_index=False).agg({"Sales": "sum"})
 
-# Limit Page Size for Datatables to limit data being loaded
+##### Prep Data for Data Table
+# Add Column quarter
+# Group By "Store", "quarter" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+df_table = df
+df_table["quarter"] = pd.PeriodIndex(df_table["Date"], freq='Q')
+df_table_sales = df_table.groupby(["Store", "quarter", "StateName"], as_index=False).agg({"Sales": "sum"})
+
+# Transform columns values from column "quarter" in independent columns
+df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='quarter', values='Sales')
+
+
+##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5
 
 # Add map of Germany
@@ -97,7 +109,7 @@ app.layout = dbc.Container([
             dash_table.DataTable(
                 id='table-multicol-sorting',
                 columns=[
-                    {"name": i, "id": i} for i in sorted(df.columns)
+                    {"name": i, "id": i} for i in sorted(df_table_sales.columns)
                 ],
                 page_current=0,
                 page_size=PAGE_SIZE,
@@ -121,13 +133,35 @@ app.layout = dbc.Container([
 @callback(
     Output(component_id='my-first-graph-final', component_property='figure'),
     Input(component_id='my-range-slider', component_property='value'),
-    # Input('table-multicol-sorting', "page_current"),
-    # Input('table-multicol-sorting', "page_size"),
-    # Input('table-multicol-sorting', "sort_by")
+    Input('table-multicol-sorting', "page_current"),
+    Input('table-multicol-sorting', "page_size"),
+    Input('table-multicol-sorting', "sort_by")
 )
-def update_graph(col_chosen):
-    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
-    return fig
+
+# function for updating line chart
+# def update_graph(col_chosen):
+#     fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
+#     return fig
+
+# Function for updating data table
+def update_table(page_current, page_size, sort_by):
+    print(sort_by)
+    if len(sort_by):
+        dff = df_table_sales.sort_values(
+            [col['column_id'] for col in sort_by],
+            ascending=[
+                col['Store'] == 'asc'
+                for col in sort_by
+            ],
+            inplace=False
+        )
+    else:
+        # No sort is applied
+        dff = df_table_sales
+
+    return dff.iloc[
+        page_current*page_size:(page_current+ 1)*page_size
+    ].to_dict('Sales')
 
 # Run the app
 if __name__ == '__main__':
