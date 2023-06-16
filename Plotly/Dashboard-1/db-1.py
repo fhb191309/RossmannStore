@@ -5,24 +5,24 @@ import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
-import json
+import geojson
+# import json
 
 # Load GeoJSON file from Github
 # Author: Francesco Schwarz
 # source: https://github.com/isellsoap/deutschlandGeoJSON
-with urlopen('https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/2_bundeslaender/2_hoch.geo.json') as response:
-    bundeslaender = json.load(response)
+with open('2_hoch.geo.json') as b:
+    bundeslaender = geojson.load(b)
+# bundeslaender = json.load('2_hoch.geo.json')
 
 # Incorporate data
 # Token needs to be refreshed after 30min of use, because the file is inside a pivate repository
-df = pd.read_csv('https://raw.githubusercontent.com/elvoeglo/RossmannStore/main/Plotly/group_rossmann_dataprep.csv?token=GHSAT0AAAAAACBCGRFICQCGBNVCNG7WFRXKZEHQAOA', sep=';')
+df = pd.read_csv('group_rossmann_dataprep.csv', sep=';')
 
-# Convert Column "Date" from object to datetime
+# Group by Bundesland to generate sum
 # Sort Dataframe by Date
-# Group by Bundesland
-df['Date'] = pd.to_datetime(df['Date'])
-df.sort_values(by='Date', ascending = False, inplace = True)
-df.groupby('StateName')
+df.groupby(['Store', 'Date', 'StateName'])['Sales'].sum()
+# df.sort_values(by='Date', ascending = True, inplace = True)
 
 # Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5
@@ -34,7 +34,7 @@ fig_map = px.choropleth(df, geojson=bundeslaender, locations='StateName', color=
                            scope="europe",
                            labels={'sales':'sales rate'}
                           )
-fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
 
 # fig_geo = go.Figure(go.Scattergeo())
 # fig_geo.update_geos(
@@ -46,9 +46,6 @@ fig_map.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
 # Add Graphs for Sales per State and Month
 fig_sales_per_state_and_month = px.line(df, x="Date", y="Sales", color='StateName')
-fig_sales_per_state_and_month.update_xaxes(
-    dtick="M1",
-    tickformat="%b\n%Y")
 
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.CERULEAN]
@@ -124,9 +121,9 @@ app.layout = dbc.Container([
 @callback(
     Output(component_id='my-first-graph-final', component_property='figure'),
     Input(component_id='my-range-slider', component_property='value'),
-    Input('table-multicol-sorting', "page_current"),
-    Input('table-multicol-sorting', "page_size"),
-    Input('table-multicol-sorting', "sort_by")
+    # Input('table-multicol-sorting', "page_current"),
+    # Input('table-multicol-sorting', "page_size"),
+    # Input('table-multicol-sorting', "sort_by")
 )
 def update_graph(col_chosen):
     fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
