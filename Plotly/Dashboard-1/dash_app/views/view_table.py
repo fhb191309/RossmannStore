@@ -23,6 +23,28 @@ df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='qua
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5
 
+# Initialize the app - incorporate a Dash Bootstrap theme
+external_stylesheets = [dbc.themes.CERULEAN]
+app = Dash(__name__, external_stylesheets=external_stylesheets)
+
+def make_view_table():
+    return html.Div([
+        html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
+            dash_table.DataTable(
+                id='table-multicol-sorting',
+                columns=[
+                    {"name": i, "id": i} for i in sorted(df_table_sales.columns)
+                ],
+                page_current=0,
+                page_size=PAGE_SIZE,
+                page_action='custom',
+
+                sort_action='custom',
+                sort_mode='multi',
+                sort_by=[]
+            )
+    ])
+
 # Add controls to build the interaction
 @callback(
     Output(component_id='my-first-graph-final', component_property='figure'),
