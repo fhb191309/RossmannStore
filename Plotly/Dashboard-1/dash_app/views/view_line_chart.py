@@ -18,9 +18,9 @@ df_sales=df.groupby(["StateName", "Date"], as_index=False).agg({"Sales": "sum"})
 fig_sales_per_state_and_month = px.line(df_sales, x="Date", y="Sales", color="StateName")
 fig_sales_per_state_and_month.update_layout(xaxis=dict(tickformat="%m-%Y"))
 
-# Initialize the app - incorporate a Dash Bootstrap theme
-external_stylesheets = [dbc.themes.CERULEAN]
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+# # Initialize the app - incorporate a Dash Bootstrap theme
+# external_stylesheets = [dbc.themes.CERULEAN]
+# app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 def make_view_line_chart():
     return html.Div([

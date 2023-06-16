@@ -36,9 +36,9 @@ fig_map.update_geos(
 )
 fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
 
-# Initialize the app - incorporate a Dash Bootstrap theme
-external_stylesheets = [dbc.themes.CERULEAN]
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+# # Initialize the app - incorporate a Dash Bootstrap theme
+# external_stylesheets = [dbc.themes.CERULEAN]
+# app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 def make_view_map():
     return html.Div([

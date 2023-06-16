@@ -23,9 +23,9 @@ df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='qua
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5
 
-# Initialize the app - incorporate a Dash Bootstrap theme
-external_stylesheets = [dbc.themes.CERULEAN]
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+# # Initialize the app - incorporate a Dash Bootstrap theme
+# external_stylesheets = [dbc.themes.CERULEAN]
+# app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 def make_view_table():
     return html.Div([
