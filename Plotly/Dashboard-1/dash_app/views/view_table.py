@@ -47,7 +47,7 @@ def make_view_table():
 
 # Add controls to build the interaction
 @callback(
-    Output(component_id='my-first-graph-final', component_property='figure'),
+    Output(component_id='Umsatz pro Quartal und Jahr', component_property='figure'),
     Input('table-multicol-sorting', "page_current"),
     Input('table-multicol-sorting', "page_size"),
     Input('table-multicol-sorting', "sort_by")

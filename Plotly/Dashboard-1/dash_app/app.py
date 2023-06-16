@@ -4,9 +4,9 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 
 # import from views
-from dash_app.views.view_map import make_view_map
-from dash_app.views.view_table import make_view_table
-from dash_app.views.view_line_chart import make_view_line_chart
+from views.view_map import make_view_map
+from views.view_table import make_view_table
+from views.view_line_chart import make_view_line_chart
 
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.CERULEAN]
