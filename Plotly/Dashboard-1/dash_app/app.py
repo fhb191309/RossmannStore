@@ -59,17 +59,6 @@ app.layout = dbc.Container([
 
 ], fluid=True)
 
-# Add controls to build the interaction
-@callback(
-    Output(component_id='Rossmann Stores - Dashboard 1', component_property='children'),
-    Input(component_id='my-range-slider', component_property='value'),
-)
-
-# function for updating line chart
-def update_graph(col_chosen):
-    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
-    return fig
-
 # Run the app
 if __name__ == '__main__':
     app.run_server(debug=True)
