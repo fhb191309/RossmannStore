@@ -16,36 +16,36 @@ with open('2_hoch.geo.json') as b:
 # bundeslaender = json.load('2_hoch.geo.json')
 
 # Incorporate data
-# Token needs to be refreshed after 30min of use, because the file is inside a pivate repository
+# Convert 'Date' from object to Date
 df = pd.read_csv('group_rossmann_dataprep.csv', sep=';')
+df["Date"]=pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
-# Group by Bundesland to generate sum
-# Sort Dataframe by Date
-df.groupby(['Store', 'Date', 'StateName'])['Sales'].sum()
-# df.sort_values(by='Date', ascending = True, inplace = True)
+# Group By Date and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+df_sales=df.groupby(["StateName", "Date"], as_index=False).agg({"Sales": "sum"})
 
 # Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5
 
 # Add map of Germany
-fig_map = px.choropleth(df, geojson=bundeslaender, locations='StateName', color='Sales',
-                           color_continuous_scale="Viridis",
-                           range_color=(0, 12),
-                           scope="europe",
-                           labels={'sales':'sales rate'}
-                          )
+# fig_map = px.choropleth(df, geojson=bundeslaender, locations='StateName', color='Sales',
+#                            color_continuous_scale="Viridis",
+#                            range_color=(0, 12),
+#                            scope="europe",
+#                            labels={'sales':'sales rate'}
+#                           )
+# fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
+
+fig_map = go.Figure(go.Scattergeo())
+fig_map.update_geos(
+    visible=False, resolution=110, scope="europe",
+    showcountries=True, countrycolor="Black",
+    showsubunits=True, subunitcolor="Blue"
+)
 fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
 
-# fig_geo = go.Figure(go.Scattergeo())
-# fig_geo.update_geos(
-#     visible=False, resolution=110, scope="europe",
-#     showcountries=True, countrycolor="Black",
-#     showsubunits=True, subunitcolor="Blue"
-# )
-# fig_geo.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
-
 # Add Graphs for Sales per State and Month
-fig_sales_per_state_and_month = px.line(df, x="Date", y="Sales", color='StateName')
+fig_sales_per_state_and_month = px.line(df_sales, x="Date", y="Sales", color="StateName")
+fig_sales_per_state_and_month.update_layout(xaxis=dict(tickformat="%m-%Y"))
 
 # Initialize the app - incorporate a Dash Bootstrap theme
 external_stylesheets = [dbc.themes.CERULEAN]
