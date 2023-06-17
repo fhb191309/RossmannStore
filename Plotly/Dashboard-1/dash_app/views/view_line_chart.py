@@ -28,14 +28,3 @@ def make_view_line_chart():
         html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
         dcc.Graph(figure=fig_sales_per_state_and_month, id='my-first-graph-final'),
     ])
-
-# Add controls to build the interaction
-@callback(
-    Output(component_id='my-first-graph-final', component_property='figure'),
-    Input(component_id='my-range-slider', component_property='value'),
-)
-
-# function for updating line chart
-def update_graph(col_chosen):
-    fig = px.histogram(df, x='continent', y=col_chosen, histfunc='avg')
-    return fig
