@@ -3,7 +3,7 @@ from dash import Dash, html, dash_table, dcc, callback, Output, Input
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
-# import from views
+# import layout functions from views module
 from views.view_map import make_view_map
 from views.view_table import make_view_table
 from views.view_line_chart import make_view_line_chart
@@ -12,7 +12,11 @@ from views.view_line_chart import make_view_line_chart
 external_stylesheets = [dbc.themes.CERULEAN]
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 
-# App layout
+##### App layout
+# Components: 
+# dbc.Row: Div - Header
+# dbc.Row: Div - Range Slider
+# dbc.Row, dbc.Column: Div - Map, Div - DataTable  and Div - LineChart
 app.layout = dbc.Container([
     dbc.Row([
         html.Div('Rossmann Stores - Dashboard 1', className="text-primary text-center fs-3")
@@ -61,4 +65,4 @@ app.layout = dbc.Container([
 
 # Run the app
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
