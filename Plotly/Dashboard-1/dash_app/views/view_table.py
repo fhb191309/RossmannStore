@@ -58,7 +58,7 @@ def update_table(page_current, page_size, sort_by):
     print(sort_by)
     if len(sort_by):
         dff = df_table_sales.sort_values(
-            [col['column_id'] for col in sort_by],
+            [col['Store'] for col in sort_by],
             ascending=[
                 col['Store'] == 'asc'
                 for col in sort_by
