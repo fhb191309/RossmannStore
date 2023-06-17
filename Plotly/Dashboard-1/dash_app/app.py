@@ -1,5 +1,5 @@
 # Import packages
-from dash import Dash, html, dash_table, dcc, callback, Output, Input
+from dash import Dash, html, dcc, callback, Output, Input
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
@@ -50,14 +50,20 @@ app.layout = dbc.Container([
     ]),
 
     dbc.Row([
+        dbc.Col([
 
-       make_view_map(),
+             make_view_map(),
 
+        ], width=6),
         dbc.Col([
 
             make_view_table(),
-            make_view_line_chart(),
 
+            dbc.Row([
+
+                make_view_line_chart(),
+
+            ]),
         ], width=6),
     ]),
 

@@ -42,9 +42,7 @@ fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0}
 
 def make_view_map():
     return html.Div([
-        dbc.Col([
-            # Todo: Fix Map
-            html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
-            html.Div(dcc.Graph(figure=fig_map))
-        ], width=6),
+        # Todo: Fix Map
+        html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
+        html.Div(dcc.Graph(figure=fig_map))
     ])

@@ -12,13 +12,24 @@ df["Date"]=pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
 ##### Prep Data for Data Table
 # Add Column quarter
-# Group By "Store", "quarter" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
 df_table = df
 df_table["quarter"] = pd.PeriodIndex(df_table["Date"], freq='Q')
-df_table_sales = df_table.groupby(["Store", "quarter", "StateName"], as_index=False).agg({"Sales": "sum"})
+
+# Convert "quarter" column to string
+df_table["quarter"] = df_table["quarter"].astype(str)
+
+# Split the "quarter" column into year and quarter components
+df_table[["year", "quarter"]] = df_table["quarter"].str.split("Q", expand=True)
+
+# df_table["quarter"] = df_table["quarter"].strftime('%Y-%m-%d')
+# Create a new column "formatted_quarter" by concatenating the year and quarter with a hyphen
+df_table["formatted_quarter"] = df_table["year"] + "-" + df_table["quarter"]
+
+# Group By "Store", "quarter" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+df_table_sales = df_table.groupby(["Store", "formatted_quarter", "StateName"], as_index=False).agg({"Sales": "sum"})
 
 # Transform columns values from column "quarter" in independent columns
-df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='quarter', values='Sales')
+df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='formatted_quarter', values='Sales')
 
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 5

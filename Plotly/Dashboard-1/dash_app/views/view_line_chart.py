@@ -24,11 +24,9 @@ fig_sales_per_state_and_month.update_layout(xaxis=dict(tickformat="%m-%Y"))
 
 def make_view_line_chart():
     return html.Div([
-        dbc.Row([
-                # Todo: Fix Graph
-                html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
-                dcc.Graph(figure=fig_sales_per_state_and_month, id='my-first-graph-final'),
-            ])
+        # Todo: Fix Graph
+        html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
+        dcc.Graph(figure=fig_sales_per_state_and_month, id='my-first-graph-final'),
     ])
 
 # Add controls to build the interaction
