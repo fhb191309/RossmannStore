@@ -41,15 +41,20 @@ def make_view_table():
     return html.Div([
         html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
         dash_table.DataTable(
-            id='table-multicol-sorting',
-            columns=[{"name": col, "id": col} for col in sorted(df_table_sales.columns)],
+            df_table_sales.to_dict('records'),
+            columns=[
+                {'name': i, 'id': i} for i in df_table_sales.columns
+            ],
+
             page_current=0,
             page_size=PAGE_SIZE,
             page_action='custom',
 
             sort_action='custom',
-            sort_mode='multi',
+            sort_mode='single',
             sort_by=[],
+
+            id='table-multicol-sorting',
             style_table={'overflowX': 'scroll'}
         )
     ])
