@@ -33,14 +33,13 @@ fig_map = px.choropleth_mapbox(
         color_continuous_scale = "Teal",
         range_color = (200000000, 1800000000),
         mapbox_style = "carto-positron",
-        zoom = 4.5, 
+        zoom = 5.2, 
         center = {"lat": 51.165691, "lon": 10.451526},
         opacity = 0.8,
         labels = {'Sales':'Sales rate'}
     )
-fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
+fig_map.update_layout(height=780, width = 900, margin={"r":0,"t":0,"l":0,"b":0})
 fig_map.update_traces(marker_line_width = 0.3, marker_line_color = 'black')
-fig_map.show()
 
 def make_view_map():
     return html.Div([
