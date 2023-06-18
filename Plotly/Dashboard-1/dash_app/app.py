@@ -45,8 +45,8 @@ app.layout = dbc.Container(
                                 "SH",  # Schleswig Holstein
                                 "SN",  # Sachsen
                                 "ST",  # Sachsen Anhalt
-                                "TH",
-                            ],  # Thüringen
+                                "TH",  # Thüringen
+                            ],  
                             "Alle Bundesländer",
                             id="dropdown",
                         ),
