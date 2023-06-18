@@ -24,20 +24,6 @@ df[["year", "quarter"]] = df["quarter"].str.split("Q", expand=True)
 # Create a new column "formatted_quarter" by concatenating the year and quarter with a hyphen
 df["formatted_quarter"] = df["year"] + "-" + df["quarter"]
 
-# # Group By "Store", "quarter" and "State", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-# df_table_sales = df_table.groupby(
-#     ["Store", "State", "formatted_quarter"], as_index=False
-# ).agg({"Sales": "sum"})
-
-# # Transform columns values from column "quarter" in independent columns
-# df_table_sales = df_table_sales.pivot(
-#     index=["Store", "State"], columns="formatted_quarter", values="Sales"
-# )
-
-# # Reset the index to make "Store" and "StateName" regular columns
-# df_table_sales = df_table_sales.reset_index()
-
-
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 100
 
