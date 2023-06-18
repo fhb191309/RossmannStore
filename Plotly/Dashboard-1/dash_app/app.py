@@ -1,4 +1,5 @@
 # Import packages
+from datetime import date
 from dash import Dash, html, dcc, callback, Output, Input
 import plotly.express as px
 import dash_bootstrap_components as dbc
@@ -23,30 +24,39 @@ app.layout = dbc.Container([
     ]),
 
     dbc.Row([
-        # Todo: Replace RadoItems with RangeSlider
-        dcc.RangeSlider(
-            id = 'my-range-slider',
-            min = 2013.0,
-            max = 2015.8,
-            step = 0.1,
-            marks={
-                2013.0: '1.1.2013',
-                2013.3: '1.3.2013',
-                2013.6: '1.6.2013',
-                2013.9: '1.9.2013',
-                2014.0: '1.1.2014',
-                2014.3: '1.3.2014',
-                2014.6: '1.6.2014',
-                2014.9: '1.9.2014',
-                2015.0: '1.1.2015',
-                2015.3: '1.3.2015',
-                2015.6: '1.6.2015',
-                2015.8: '1.8.2015'
-            }, 
-            value = [2013.0, 2015.0],
-            updatemode='drag',
-            tooltip={'always_visible': True, 'placement': 'bottom'}
+        dbc.Col([
+
+            dcc.DatePickerRange(
+                id='my-date-picker-range',
+                min_date_allowed=date(2013, 1, 1),
+                max_date_allowed=date(2015, 7, 31),
+                initial_visible_month=date(2013, 1, 1),
+                start_date=date(2013, 1, 1),
+                end_date=date(2015, 7, 31)
             ),
+            html.Div(id='output-container-date-picker-range')
+
+        ], width=6),
+        dbc.Col([
+
+            dcc.Dropdown([
+                'Alle Bundesländer',
+                'BE', # Berlin
+                'BW', # Baden Württemberg
+                'BY', # Bayern
+                'HE', # Hessen
+                'HH', # Hamburg
+                'NW', # Nordrhein Westfalen
+                'RP', # Rheinland Pfalz
+                'SH', # Schleswig Holstein
+                'SN', # Sachsen
+                'ST', # Sachsen Anhalt
+                'TH'], # Thüringen
+                'Alle Bundesländer',
+                id='dropdown'),
+            html.Div(id='dd-output-container')
+
+        ], width=6),
     ]),
 
     dbc.Row([
@@ -68,6 +78,32 @@ app.layout = dbc.Container([
     ]),
 
 ], fluid=True)
+
+@callback(
+    Output('output-container-date-picker-range', 'children'),
+    Input('my-date-picker-range', 'start_date'),
+    Input('my-date-picker-range', 'end_date'))
+def update_output(start_date, end_date):
+    string_prefix = 'Deine Auswahl: '
+    if start_date is not None:
+        start_date_object = date.fromisoformat(start_date)
+        start_date_string = start_date_object.strftime('%B %d, %Y')
+        string_prefix = string_prefix + 'Start Datum: ' + start_date_string + ' | '
+    if end_date is not None:
+        end_date_object = date.fromisoformat(end_date)
+        end_date_string = end_date_object.strftime('%B %d, %Y')
+        string_prefix = string_prefix + 'End Datum: ' + end_date_string
+    if len(string_prefix) == len('Deine Auswahl: '):
+        return 'Wähle zur Anzeige Datum aus!'
+    else:
+        return string_prefix
+
+@callback(
+    Output('dd-output-container', 'children'),
+    Input('dropdown', 'value')
+)
+def update_output(value):
+    return f'Deine Auswahl: {value}'
 
 # Run the app
 if __name__ == '__main__':
