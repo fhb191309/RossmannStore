@@ -25,11 +25,11 @@ df_table[["year", "quarter"]] = df_table["quarter"].str.split("Q", expand=True)
 # Create a new column "formatted_quarter" by concatenating the year and quarter with a hyphen
 df_table["formatted_quarter"] = df_table["year"] + "-" + df_table["quarter"]
 
-# Group By "Store", "quarter" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-df_table_sales = df_table.groupby(["Store", "StateName", "formatted_quarter"], as_index=False).agg({"Sales": "sum"})
+# Group By "Store", "quarter" and "State", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+df_table_sales = df_table.groupby(["Store", "State", "formatted_quarter"], as_index=False).agg({"Sales": "sum"})
 
 # Transform columns values from column "quarter" in independent columns
-df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='formatted_quarter', values='Sales')
+df_table_sales = df_table_sales.pivot(index=["Store", "State"], columns='formatted_quarter', values='Sales')
 
 # Reset the index to make "Store" and "StateName" regular columns
 df_table_sales = df_table_sales.reset_index()
