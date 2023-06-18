@@ -37,13 +37,24 @@ df_table_sales = df_table_sales.reset_index()
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 10
 
-def make_view_table():
+# Variable for further use
+df_table_sales_filtered = df_table_sales.copy()
+
+def make_view_table(selected_state):
+
+    # Filter data based on selected state
+    if selected_state == "Alle Bundesländer":
+        df_table_sales_filtered = df_table_sales.copy()
+
+    else:
+        df_table_sales_filtered = df_table_sales[df_table_sales["State"] == selected_state]
+
     return html.Div([
         html.Div('Umsatz pro Quartal und Jahr', className="text-primary text-center fs-3"),
         dash_table.DataTable(
-            df_table_sales.to_dict('records'),
+            df_table_sales_filtered.to_dict('records'),
             columns=[
-                {'name': i, 'id': i} for i in df_table_sales.columns
+                {'name': i, 'id': i} for i in df_table_sales_filtered.columns
             ],
 
             page_current=0,
@@ -69,7 +80,7 @@ def make_view_table():
 # Function for updating data table
 def update_table(page_current, page_size, sort_by):
     if len(sort_by):
-        dff = df_table_sales.sort_values(
+        dff = df_table_sales_filtered.sort_values(
             [col['name'] for col in sort_by],
             ascending=[
                 col['direction'] == 'asc'
@@ -79,7 +90,7 @@ def update_table(page_current, page_size, sort_by):
         )
     else:
         # No sort is applied
-        dff = df_table_sales
+        dff = df_table_sales_filtered
 
     return dff.iloc[
         page_current * page_size: (page_current + 1) * page_size

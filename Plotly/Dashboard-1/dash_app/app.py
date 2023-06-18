@@ -25,20 +25,19 @@ app.layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
-
-            dcc.DatePickerRange(
-                id='my-date-picker-range',
-                min_date_allowed=date(2013, 1, 1),
-                max_date_allowed=date(2015, 7, 31),
-                initial_visible_month=date(2013, 1, 1),
-                start_date=date(2013, 1, 1),
-                end_date=date(2015, 7, 31)
-            ),
+            # dcc.DatePickerRange(
+            #     id='my-date-picker-range',
+            #     min_date_allowed=date(2013, 1, 1),
+            #     max_date_allowed=date(2015, 7, 31),
+            #     initial_visible_month=date(2013, 1, 1),
+            #     start_date=date(2013, 1, 1),
+            #     end_date=date(2015, 7, 31),
+            #     calendar_orientation='vertical'
+            # ),
             html.Div(id='output-container-date-picker-range')
 
         ], width=6),
         dbc.Col([
-
             dcc.Dropdown([
                 'Alle Bundesländer',
                 'BE', # Berlin
@@ -53,7 +52,8 @@ app.layout = dbc.Container([
                 'ST', # Sachsen Anhalt
                 'TH'], # Thüringen
                 'Alle Bundesländer',
-                id='dropdown'),
+                id='dropdown'
+            ),
             html.Div(id='dd-output-container')
 
         ], width=6),
@@ -61,49 +61,56 @@ app.layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
-
-             make_view_map(),
-
+            html.Div(id='output-view-map')
         ], width=6),
         dbc.Col([
-
-            make_view_table(),
+            html.Div(id='output-view-table'),
 
             dbc.Row([
-
-                make_view_line_chart(),
-
+                html.Div(id='output-view-line-chart')
             ]),
         ], width=6),
     ]),
 
 ], fluid=True)
 
-@callback(
-    Output('output-container-date-picker-range', 'children'),
-    Input('my-date-picker-range', 'start_date'),
-    Input('my-date-picker-range', 'end_date'))
-def update_output(start_date, end_date):
-    string_prefix = 'Deine Auswahl: '
-    if start_date is not None:
-        start_date_object = date.fromisoformat(start_date)
-        start_date_string = start_date_object.strftime('%B %d, %Y')
-        string_prefix = string_prefix + 'Start Datum: ' + start_date_string + ' | '
-    if end_date is not None:
-        end_date_object = date.fromisoformat(end_date)
-        end_date_string = end_date_object.strftime('%B %d, %Y')
-        string_prefix = string_prefix + 'End Datum: ' + end_date_string
-    if len(string_prefix) == len('Deine Auswahl: '):
-        return 'Wähle zur Anzeige Datum aus!'
-    else:
-        return string_prefix
+
+# @callback(
+#     Output('output-container-date-picker-range', 'children'),
+#     Input('my-date-picker-range', 'start_date'),
+#     Input('my-date-picker-range', 'end_date')
+# )
+# def update_output_date(start_date, end_date):
+#     string_prefix = 'Deine Auswahl: '
+#     if start_date is not None:
+#         start_date_object = date.fromisoformat(start_date)
+#         start_date_string = start_date_object.strftime('%B %d, %Y')
+#         string_prefix = string_prefix + 'Start Datum: ' + start_date_string + ' | '
+#     if end_date is not None:
+#         end_date_object = date.fromisoformat(end_date)
+#         end_date_string = end_date_object.strftime('%B %d, %Y')
+#         string_prefix = string_prefix + 'End Datum: ' + end_date_string
+#     if len(string_prefix) == len('Deine Auswahl: '):
+#         return 'Wähle zur Anzeige Datum aus!'
+#     else:
+#         return string_prefix
+
 
 @callback(
     Output('dd-output-container', 'children'),
+    Output('output-view-map', 'children'),
+    Output('output-view-table', 'children'),
+    Output('output-view-line-chart', 'children'),
     Input('dropdown', 'value')
 )
-def update_output(value):
-    return f'Deine Auswahl: {value}'
+def update_output_dropdown(value):
+    return (
+        f'Deine Auswahl: {value}',
+        make_view_map(value),
+        make_view_table(value),
+        make_view_line_chart(value)
+    )
+
 
 # Run the app
 if __name__ == '__main__':

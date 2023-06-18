@@ -16,17 +16,36 @@ df["month_year"] = pd.PeriodIndex(df["Date"], freq='M')
 # Convert "month_year" column to string
 df["month_year"] = df["month_year"].astype(str)
 
-##### Prep Data for line Chart
-# Group By "Date" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-df_sales=df.groupby(["State", "month_year"], as_index=False).agg({"Sales": "sum"})
+# ##### Prep Data for line Chart
+# # Group By "Date" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+# df_sales=df.groupby(["State", "month_year"], as_index=False).agg({"Sales": "sum"})
 
-# Add Graphs for Sales per State and Month
-fig_sales = px.line(df_sales, x="month_year", y="Sales", color="State")
-fig_sales.update_layout(xaxis=dict(tickformat="%m-%Y"))
+# # Add Graphs for Sales per State and Month
+# fig_sales = px.line(df_sales, x="month_year", y="Sales", color="State")
+# fig_sales.update_layout(xaxis=dict(tickformat="%m-%Y"))
 
-def make_view_line_chart():
+def make_view_line_chart(selected_state):
+
+    if selected_state == "Alle Bundesländer":
+        # Group By "Date" and "StateName", aggregate by sum of Sales
+        df_sales = df.groupby(["State", "month_year"], as_index=False).agg({"Sales": "sum"})
+
+        # Add Graphs for Sales per State and Month
+        fig_sales = px.line(df_sales, x="month_year", y="Sales", color="State")
+
+    else:
+        # Filter data based on selected state
+        df_filtered = df[df["State"] == selected_state]
+
+        # Group By "month_year", aggregate by sum of Sales
+        df_sales = df_filtered.groupby("month_year", as_index=False).agg({"Sales": "sum"})
+
+        # Add Graph for Sales per Month
+        fig_sales = px.line(df_sales, x="month_year", y="Sales")
+
+    fig_sales.update_layout(xaxis=dict(tickformat="%m-%Y"))
+
     return html.Div([
-        # Todo: Fix Graph
         html.Div('Umsatz pro Bundesland und Monat', className="text-primary text-center fs-3"),
-        dcc.Graph(figure=fig_sales, id='my-first-graph-final'),
+        dcc.Graph(figure=fig_sales, id='line-chart'),
     ])
