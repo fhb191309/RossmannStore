@@ -28,11 +28,11 @@ df_table["formatted_quarter"] = df_table["year"] + "-" + df_table["quarter"]
 # Group By "Store", "quarter" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
 df_table_sales = df_table.groupby(["Store", "StateName", "formatted_quarter"], as_index=False).agg({"Sales": "sum"})
 
-# Reset the index to make "Store" and "StateName" regular columns
-df_table_sales = df_table_sales.reset_index()
-
 # Transform columns values from column "quarter" in independent columns
 df_table_sales = df_table_sales.pivot(index=["Store", "StateName"], columns='formatted_quarter', values='Sales')
+
+# Reset the index to make "Store" and "StateName" regular columns
+df_table_sales = df_table_sales.reset_index()
 
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 10
@@ -46,6 +46,7 @@ def make_view_table():
             page_current=0,
             page_size=PAGE_SIZE,
             page_action='custom',
+
             sort_action='custom',
             sort_mode='multi',
             sort_by=[],
@@ -55,7 +56,7 @@ def make_view_table():
 
 # Add controls to build the interaction
 @callback(
-    Output(component_id='table-multicol-sorting', component_property='data'),
+    Output('table-multicol-sorting', 'data'),
     Input('table-multicol-sorting', "page_current"),
     Input('table-multicol-sorting', "page_size"),
     Input('table-multicol-sorting', "sort_by")
