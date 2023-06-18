@@ -20,9 +20,6 @@ with open("2_hoch.geo.json") as b:
 df = pd.read_csv("group_rossmann_dataprep.csv", sep=";")
 df["Date"] = pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
-# Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-# df_sales = df.groupby(["State", "StateName"], as_index=False).agg({"Sales": "sum"})
-
 
 def make_view_map(selected_state):
     # Filter data based on selected state
