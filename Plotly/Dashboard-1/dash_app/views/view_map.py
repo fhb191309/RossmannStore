@@ -19,30 +19,31 @@ with open('2_hoch.geo.json') as b:
 df = pd.read_csv('group_rossmann_dataprep.csv', sep=';')
 df["Date"]=pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
+# Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+df_sales=df.groupby(["State", "StateName"], as_index=False).agg({"Sales": "sum"})
+
 # Add map of Germany
-# fig_map = px.choropleth(df, geojson=bundeslaender, locations='StateName', color='Sales',
-#                            color_continuous_scale="Viridis",
-#                            range_color=(0, 12),
-#                            scope="europe",
-#                            labels={'sales':'sales rate'}
-#                           )
-# fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
-
-fig_map = go.Figure(go.Scattergeo())
-fig_map.update_geos(
-    visible=False, resolution=110, scope="europe",
-    showcountries=True, countrycolor="Black",
-    showsubunits=True, subunitcolor="Blue"
-)
+fig_map = px.choropleth_mapbox(
+        data_frame = df_sales, 
+        geojson = bundeslaender, 
+        featureidkey = 'properties.id', 
+        locations = 'State', 
+        color = 'Sales',
+        hover_name = 'StateName',
+        color_continuous_scale = "Teal",
+        range_color = (200000000, 1800000000),
+        mapbox_style = "carto-positron",
+        zoom = 4.5, 
+        center = {"lat": 51.165691, "lon": 10.451526},
+        opacity = 0.8,
+        labels = {'Sales':'Sales rate'}
+    )
 fig_map.update_layout(height=780, width = 1080, margin={"r":0,"t":0,"l":0,"b":0})
-
-# # Initialize the app - incorporate a Dash Bootstrap theme
-# external_stylesheets = [dbc.themes.CERULEAN]
-# app = Dash(__name__, external_stylesheets=external_stylesheets)
+fig_map.update_traces(marker_line_width = 0.3, marker_line_color = 'black')
+fig_map.show()
 
 def make_view_map():
     return html.Div([
-        # Todo: Fix Map
         html.Div('Umsatz pro Bundesland', className="text-primary text-center fs-3"),
         html.Div(dcc.Graph(figure=fig_map))
     ])
