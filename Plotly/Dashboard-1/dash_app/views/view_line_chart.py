@@ -10,17 +10,19 @@ import plotly.graph_objects as go
 df = pd.read_csv('group_rossmann_dataprep.csv', sep=';')
 df["Date"]=pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
+# Create Column with month and year pair
+df["month_year"] = pd.PeriodIndex(df["Date"], freq='M')
+
+# Convert "month_year" column to string
+df["month_year"] = df["month_year"].astype(str)
+
 ##### Prep Data for line Chart
 # Group By "Date" and "StateName", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-df_sales=df.groupby(["StateName", "Date"], as_index=False).agg({"Sales": "sum"})
+df_sales=df.groupby(["StateName", "month_year"], as_index=False).agg({"Sales": "sum"})
 
 # Add Graphs for Sales per State and Month
-fig_sales_per_state_and_month = px.line(df_sales, x="Date", y="Sales", color="StateName")
+fig_sales_per_state_and_month = px.line(df_sales, x="month_year", y="Sales", color="StateName")
 fig_sales_per_state_and_month.update_layout(xaxis=dict(tickformat="%m-%Y"))
-
-# # Initialize the app - incorporate a Dash Bootstrap theme
-# external_stylesheets = [dbc.themes.CERULEAN]
-# app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 def make_view_line_chart():
     return html.Div([
