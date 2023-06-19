@@ -16,11 +16,16 @@ df["month_year"] = pd.PeriodIndex(df["Date"], freq="M")
 # Convert "month_year" column to string
 df["month_year"] = df["month_year"].astype(str)
 
-
+##### Function for creating a layout for the Line Chart
+# input: selected_state (Input from Dropdown in app.py) 
+# output: html.Div with figure
 def make_view_line_chart(selected_state):
+    
     if selected_state == "Alle Bundesländer":
         # Group By "Date" and "StateName", aggregate by sum of Sales
-        df_sales = df.groupby(["State", "month_year"], as_index=False).agg(
+        df_sales = df.groupby(
+            ["State", "month_year"], as_index=False
+            ).agg(
             {"Sales": "sum"}
         )
 
@@ -32,7 +37,9 @@ def make_view_line_chart(selected_state):
         df_filtered = df[df["State"] == selected_state]
 
         # Group By "month_year", aggregate by sum of Sales
-        df_sales = df_filtered.groupby("month_year", as_index=False).agg(
+        df_sales = df_filtered.groupby(
+            "month_year", as_index=False
+            ).agg(
             {"Sales": "sum"}
         )
 

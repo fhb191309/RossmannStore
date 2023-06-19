@@ -20,16 +20,17 @@ df["quarter"] = df["quarter"].astype(str)
 # Split the "quarter" column into year and quarter components
 df[["year", "quarter"]] = df["quarter"].str.split("Q", expand=True)
 
-# df_table["quarter"] = df_table["quarter"].strftime('%Y-%m-%d')
 # Create a new column "formatted_quarter" by concatenating the year and quarter with a hyphen
 df["formatted_quarter"] = df["year"] + "-" + df["quarter"]
 
 ##### Limit Page Size for Datatables to limit data being loaded
 PAGE_SIZE = 100
 
-
+##### Function for creating a layout for the Data Table
+# input: selected_state (Input from Dropdown in app.py) 
+# output: html.Div with figure
 def make_view_table(selected_state):
-    # Filter data based on selected state
+    
     if selected_state == "Alle Bundesländer":
         # Group By "Store", "quarter" and "State", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
         df_table_sales = df.groupby(

@@ -16,7 +16,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 ##### App layout
 # Components:
 # dbc.Row: Div - Header
-# dbc.Row: Div - Range Slider
+# dbc.Row: Div - Dropdown, Div - Ouput Container
 # dbc.Row, dbc.Column: Div - Map, Div - DataTable  and Div - LineChart
 app.layout = dbc.Container(
     [
@@ -77,7 +77,7 @@ app.layout = dbc.Container(
     fluid=True,
 )
 
-
+# Callback Function for actions/changes after user input in Dropdown Menu
 @callback(
     Output("dd-output-container", "children"),
     Output("output-view-map", "children"),

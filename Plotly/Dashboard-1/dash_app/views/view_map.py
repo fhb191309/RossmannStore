@@ -6,26 +6,27 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import geojson
 
-# import json
-
 # Load GeoJSON file from Github
 # Author: Francesco Schwarz
 # source: https://github.com/isellsoap/deutschlandGeoJSON
 with open("2_hoch.geo.json") as b:
     bundeslaender = geojson.load(b)
-# bundeslaender = json.load('2_hoch.geo.json')
 
 ##### Incorporate data
 # Convert 'Date' from object to Date
 df = pd.read_csv("group_rossmann_dataprep.csv", sep=";")
 df["Date"] = pd.to_datetime(df["Date"], format="%d.%m.%Y")
 
-
+##### Function for creating a layout for a Choropleth Map of Germany
+# input: selected_state (Input from Dropdown in app.py) 
+# output: html.Div with figure
 def make_view_map(selected_state):
-    # Filter data based on selected state
+    
     if selected_state == "Alle Bundesländer":
         # Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
-        df_sales = df.groupby(["State", "StateName"], as_index=False).agg(
+        df_sales = df.groupby(
+            ["State", "StateName"], as_index=False
+            ).agg(
             {"Sales": "sum"}
         )
 
@@ -36,7 +37,9 @@ def make_view_map(selected_state):
         # Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
         df_sales = df_sales_filtered.groupby(
             ["State", "StateName"], as_index=False
-        ).agg({"Sales": "sum"})
+            ).agg(
+            {"Sales": "sum"}
+        )
 
     # Add map of Germany
     fig_map = px.choropleth_mapbox(
