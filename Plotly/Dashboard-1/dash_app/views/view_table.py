@@ -32,7 +32,7 @@ PAGE_SIZE = 100
 def make_view_table(selected_state):
     
     if selected_state == "Alle Bundesländer":
-        # Group By "Store", "quarter" and "State", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+        # Group By "Store", "quarter" and "State", aggregate by sum of Sales
         df_table_sales = df.groupby(
             ["Store", "State", "formatted_quarter"], as_index=False
         ).agg({"Sales": "sum"})
@@ -49,7 +49,7 @@ def make_view_table(selected_state):
         # Filter data based on selected state
         df_table_sales_filtered = df[df["State"] == selected_state]
 
-        # Group By "Store", "quarter" and "State", aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+        # Group By "Store", "quarter" and "State", aggregate by sum of Sales
         df_table_sales_filtered = df_table_sales_filtered.groupby(
             ["Store", "State", "formatted_quarter"], as_index=False
         ).agg({"Sales": "sum"})

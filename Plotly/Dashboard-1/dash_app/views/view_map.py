@@ -23,7 +23,7 @@ df["Date"] = pd.to_datetime(df["Date"], format="%d.%m.%Y")
 def make_view_map(selected_state):
     
     if selected_state == "Alle Bundesländer":
-        # Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+        # Group By State and StateName, aggregate by sum of Sales
         df_sales = df.groupby(
             ["State", "StateName"], as_index=False
             ).agg(
@@ -34,7 +34,7 @@ def make_view_map(selected_state):
         # Filter data based on selected state
         df_sales_filtered = df[df["State"] == selected_state]
 
-        # Group By State and StateName, aggregate by sum of Sales -> nyc.groupby (....).agg(....)
+        # Group By State and StateName, aggregate by sum of Sales
         df_sales = df_sales_filtered.groupby(
             ["State", "StateName"], as_index=False
             ).agg(
