@@ -4,15 +4,20 @@ A simple visualization of the Rossmann Stores data set in Tableau and Plotly Das
 # Plotly
 Be aware, that you need to have installed Python 3.x before following the next steps.
 
-1. To install the app with Plotly Dash run:
+1. Go to Folder 'dash_app' and start in terminal:
+````
+Plotly > Dashboard-1 > dash_app
+````
+
+2. Install app:
 ````
 $ pip install -r requirements.txt
 ````
 
-2. To run the app run:
+3. Run app:
 ````
 $ python app.py
 ````
 
 # Tableau
-In the 'Tableau' folder you will find Tableau Prep and Tableau Files
+In folder 'Tableau' you will find Tableau Prep and Tableau Files
